@@ -12,5 +12,4 @@ public class Geometry {
         Rectangle.printRectangleArea( 4.0, 5.0 );
         Rectangle.printRectangleArea( 5.0, 7.0 );
     }
-
 }
