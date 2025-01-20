@@ -2,7 +2,6 @@
   <configuration default="false" name="Geometry" type="Application" factoryName="Application" nameIsGenerated="true">
     <option name="MAIN_CLASS_NAME" value="Geometry" />
     <module name="sandbox.main" />
-    <option name="PROGRAM_PARAMETERS" value="-Dfile.encoding=windows-1251" />
     <method v="2">
       <option name="Make" enabled="true" />
     </method>

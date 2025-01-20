@@ -3,11 +3,11 @@ import java.io.OutputStreamWriter;
 import java.nio.charset.Charset;
 
 public class Geometry {
-    private static String getDefaultCharSet() {
-        OutputStreamWriter writer = new OutputStreamWriter(new ByteArrayOutputStream());
-        String enc = writer.getEncoding();
-        return enc;
-    }
+//    private static String getDefaultCharSet() {
+//        OutputStreamWriter writer = new OutputStreamWriter(new ByteArrayOutputStream());
+//        String enc = writer.getEncoding();
+//        return enc;
+//    }
     public static void main(String[] args) {
         var a = 5;
 
