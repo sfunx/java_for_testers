@@ -17,10 +17,3 @@ dependencies {
 test {
     useJUnitPlatform()
 }
-
-tasks.withType(JavaCompile) {
-    options.encoding = 'windows-1251'
-}
-tasks.withType(Test) {
-    systemProperty "file.encoding", "UTF8"
-}

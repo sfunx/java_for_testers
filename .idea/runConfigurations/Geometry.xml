@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Geometry" type="Application" factoryName="Application" nameIsGenerated="true">
-    <option name="MAIN_CLASS_NAME" value="Geometry" />
+    <option name="MAIN_CLASS_NAME" value="ru.stqa.geometry.Geometry" />
     <module name="sandbox.main" />
     <method v="2">
       <option name="Make" enabled="true" />
