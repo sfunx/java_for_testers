@@ -17,4 +17,44 @@ public class TriangleTests {
         double result = s.perimeter();
         Assertions.assertEquals(64.0, result);
     }
+
+    @Test
+    void cantCreateBadTriangle() {
+        Object created = null;
+        Exception e = null;
+        try {
+            var t = new Triangle(5.0, 3.0, 9.0);
+            created = t;
+        } catch (IllegalArgumentException iae) {
+            Assertions.assertNull(created);
+            e = iae;
+        } finally {
+            Assertions.assertNotNull(e);
+        }
+    }
+    @Test
+    void cantUseNegativeSides() {
+        Object created = null;
+        Exception e = null;
+        try {
+            var t = new Triangle( -5.0, 3.0, 9.0 );
+            created = t;
+        } catch (IllegalArgumentException iae) {
+            Assertions.assertNull(created);
+            e = iae;
+        } finally {
+            Assertions.assertNotNull(e);
+        }
+    }
+
+    @Test
+    void canCreateGoodTriangle() {
+        double a = 1, b = 2, c = 1.5;
+
+        var t = new Triangle(a,b,c);
+        Assertions.assertNotNull(t);
+        Assertions.assertEquals(t.geta(), a);
+        Assertions.assertEquals(t.getb(), b);
+        Assertions.assertEquals(t.getc(), c);
+    }
 }
