@@ -1,0 +1,12 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="MathTests.testDivideByZero" type="JUnit" factoryName="JUnit" nameIsGenerated="true" printAsyncStackTraceForExceptions="false">
+    <module name="sandbox.test" />
+    <option name="PACKAGE_NAME" value="" />
+    <option name="MAIN_CLASS_NAME" value="MathTests" />
+    <option name="METHOD_NAME" value="testDivideByZero" />
+    <option name="TEST_OBJECT" value="method" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

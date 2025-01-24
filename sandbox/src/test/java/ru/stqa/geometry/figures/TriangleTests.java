@@ -53,8 +53,50 @@ public class TriangleTests {
 
         var t = new Triangle(a,b,c);
         Assertions.assertNotNull(t);
-        Assertions.assertEquals(t.geta(), a);
-        Assertions.assertEquals(t.getb(), b);
-        Assertions.assertEquals(t.getc(), c);
+        Assertions.assertEquals(a, t.a());
+        Assertions.assertEquals(b, t.b());
+        Assertions.assertEquals(c, t.c());
+    }
+
+    @Test
+    void testEquals() {
+        var s1 = new Triangle( 3.0, 4.0, 5.0 );
+        var s2 = new Triangle( 3.0, 4.0, 5.0 );
+        Assertions.assertEquals( s1, s2 );
+    }
+
+    @Test
+    void testEquals2() {
+        var s1 = new Triangle( 3.0, 4.0, 5.0 );
+        var s2 = new Triangle( 3.0, 5.0, 4.0 );
+        Assertions.assertEquals( s1, s2 );
+    }
+
+    @Test
+    void testEquals3() {
+        var s1 = new Triangle( 3.0, 4.0, 5.0);
+        var s2 = new Triangle( 4.0, 3.0, 5.0 );
+        Assertions.assertEquals( s1, s2 );
+    }
+
+    @Test
+    void testEquals4() {
+        var s1 = new Triangle( 3.0, 4.0, 5.0);
+        var s2 = new Triangle( 4.0, 5.0, 3.0 );
+        Assertions.assertEquals( s1, s2 );
+    }
+
+    @Test
+    void testEquals5() {
+        var s1 = new Triangle( 3.0, 4.0, 5.0);
+        var s2 = new Triangle( 5.0, 3.0, 4.0 );
+        Assertions.assertEquals( s1, s2 );
+    }
+
+    @Test
+    void testEquals6() {
+        var s1 = new Triangle( 3.0, 4.0, 5.0);
+        var s2 = new Triangle( 5.0, 4.0, 3.0 );
+        Assertions.assertEquals( s1, s2 );
     }
 }
