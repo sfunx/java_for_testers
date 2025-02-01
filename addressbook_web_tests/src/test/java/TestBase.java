@@ -30,6 +30,7 @@ public class TestBase {
     public void setUp() {
         if (driver == null) {
             driver = new FirefoxDriver();
+            Runtime.getRuntime().addShutdownHook(new Thread(driver::quit));
             driver.get("http://localhost/addressbook/");
             driver.manage().window().setSize(new Dimension(1750, 1226));
             driver.findElement(By.name("user")).sendKeys("admin");
