@@ -3,16 +3,15 @@ package manager;
 import model.GroupData;
 import org.openqa.selenium.By;
 
-public class GroupHelper {
-    private final ApplicationManager app;
+public class GroupHelper extends HelperBase {
 
     public GroupHelper(ApplicationManager app) {
-        this.app = app;
+        super(app);
     }
 
     protected void openGroupsPage() {
         if (!app.isElementPresent(By.name("new"))) {
-            app.driver.findElement(By.linkText("groups")).click();
+            click(By.linkText("groups"));
         }
     }
 
@@ -21,23 +20,49 @@ public class GroupHelper {
         return app.isElementPresent(By.name("selected[]"));
     }
 
-    public void createGroup(GroupData groupData) {
+    public void createGroup(GroupData group) {
         openGroupsPage();
-        app.driver.findElement(By.name("new")).click();
-        app.driver.findElement(By.name("group_name")).click();
-        app.driver.findElement(By.name("group_name")).sendKeys(groupData.name());
-        app.driver.findElement(By.name("group_header")).click();
-        app.driver.findElement(By.name("group_header")).sendKeys(groupData.header());
-        app.driver.findElement(By.name("group_footer")).click();
-        app.driver.findElement(By.name("group_footer")).sendKeys(groupData.footer());
-        app.driver.findElement(By.name("submit")).click();
-        app.driver.findElement(By.linkText("group page")).click();
+        initGroup("new");
+        fillGroupForm(group);
+        submitGroup("submit");
+        returnToGroupsPage();
     }
 
     public void removeAGroup() {
         openGroupsPage();
-        app.driver.findElement(By.name("selected[]")).click();
-        app.driver.findElement(By.name("delete")).click();
-        app.driver.findElement(By.linkText("group page")).click();
+        selectGroup();
+        submitGroup("delete");
+        returnToGroupsPage();
+    }
+
+    public void modifyGroup(GroupData group) {
+        openGroupsPage();
+        selectGroup();
+        initGroup("edit");
+        fillGroupForm(group);
+        submitGroup("update");
+        returnToGroupsPage();
+    }
+
+    private void returnToGroupsPage() {
+        click(By.linkText("group page"));
+    }
+
+    private void submitGroup(String action) {
+        click(By.name(action));
+    }
+
+    private void fillGroupForm(GroupData group) {
+        type(By.name("group_name"), group.name());
+        type(By.name("group_header"), group.header());
+        type(By.name("group_footer"), group.footer());
+    }
+
+    private void initGroup(String action) {
+        click(By.name(action));
+    }
+
+    private void selectGroup() {
+        click(By.name("selected[]"));
     }
 }
