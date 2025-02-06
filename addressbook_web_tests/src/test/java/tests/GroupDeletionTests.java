@@ -6,10 +6,9 @@ import org.junit.jupiter.api.Test;
 public class GroupDeletionTests extends TestBase {
     @Test
     public void canDeleteAGroup() {
-        app.openGroupsPage();
-        if (!app.isGroupPresent()) {
-            app.createGroup(new GroupData("new group1", "name header1", "name footer1"));
+        if (!app.groups().isGroupPresent()) {
+            app.groups().createGroup(new GroupData("new group1", "name header1", "name footer1"));
         }
-        app.removeAGroup();
+        app.groups().removeAGroup();
     }
 }
