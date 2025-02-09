@@ -8,7 +8,6 @@
       <module fileurl="file://$PROJECT_DIR$/sandbox.iml" filepath="$PROJECT_DIR$/sandbox.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/sandbox.main.iml" filepath="$PROJECT_DIR$/.idea/modules/sandbox.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/sandbox.test.iml" filepath="$PROJECT_DIR$/.idea/modules/sandbox.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/src.stepik.java.intro.iml" filepath="$PROJECT_DIR$/.idea/modules/src.stepik.java.intro.iml" />
     </modules>
   </component>
 </project>
